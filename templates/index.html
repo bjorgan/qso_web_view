@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>QSOer</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <div id='count_today'>{{ qsostats.count_today }} QSOer i dag</div>
+        <div id='count_twomonths'>{{ qsostats.count_twomonths }} q siste to måneder</div>
+        <div id='rate'>Rate: {{ qsostats.rate }} q/time</div>
+
+        <table id='last_qsos'>
+        <tr class='heading'>
+            <td>Tidspunkt</td>
+            <td>Operatør</td>
+            <td>Kall</td>
+        </tr>
+        {% for record in last_qsos %}
+        <tr>
+            <td>{{record[0]}}</td>
+            <td>{{record[1]}}</td>
+            <td>{{record[2]}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>

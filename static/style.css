@@ -1,0 +1,47 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+#count_today {
+    font-size: 96pt;
+    background-color: #add8e6;
+    text-align: center;
+}
+
+#count_twomonths {
+    font-size: 40pt;
+    background-color: #add8e6;
+    text-align: center;
+    padding-bottom: 20pt;
+}
+
+#rate {
+    font-size: 30pt;
+    padding: 40pt;
+    text-align: center;
+}
+
+tr.heading {
+    font-weight: bold;
+    background: white;
+}
+
+
+#last_qsos {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 40pt;
+}
+
+#last_qsos tr:nth-child(even) {
+    background: orange;
+}
+
+#last_qsos tr:nth-child(odd) {
+    background: #FFFF00;
+}
+
+#last_qsos td {
+    padding: 15pt;
+}
