@@ -13,18 +13,17 @@ def last_qsos(qso_db_connection, number=10):
 def current_qso_rate(qso_db_connection):
     """
     Calculate current QSO rate as number of QSOs within the last hour over the
-    time difference between first and last QSO.
+    time difference between first QSO and now.
     """
     import numpy as np
     c = qso_db_connection.cursor()
 
     #fetch timestamps of QSOs within one hour
-    c.execute('SELECT timestamp from qsos WHERE timestamp > %s', (n_days_ago(1.0/24.0),))
+    c.execute('SELECT timestamp from qsos WHERE timestamp > %s ORDER BY timestamp ASC', (n_days_ago(1.0/24.0),))
     data = c.fetchall()
     if len(data) > 0:
-      timestamp = np.array(data)[:, 0].astype(str).astype(np.datetime64)
-      timerange = (timestamp - timestamp[0]).astype(int)[-1]/60.0/60.0
-      num_qsos = len(timestamp)
+      timerange = (datetime.utcnow() - data[0][0]).total_seconds()/60.0/60.0
+      num_qsos = len(data)
       return int(round(num_qsos/timerange))
     else:
       return 0
@@ -70,6 +69,6 @@ def n_days_ago(days):
     date_str: str
         String on format YYYY-MM-DD HH:MM a specific number of days ago.
     """
-    date_str = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d %H:%M")
+    date_str = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%d %H:%M")
     return date_str
 
