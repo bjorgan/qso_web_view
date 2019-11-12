@@ -16,14 +16,14 @@
         <table id='last_qsos'>
         <tr class='heading'>
             <td class='time'>Tidspunkt</td>
-            <td>Operatør</td>
-            <td>Kall</td>
+            <td class='operator'>Operatør</td>
+            <td class='call'>Kall</td>
         </tr>
         {% for record in last_qsos %}
         <tr>
             <td class='time'>{{record[0]}}</td>
-            <td>{{record[1]}}</td>
-            <td>{{record[2]}}</td>
+            <td class='operator'>{{record[1]}}</td>
+            <td class='call'>{{record[2]}}</td>
         </tr>
         {% endfor %}
         </table>

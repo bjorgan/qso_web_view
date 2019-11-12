@@ -48,4 +48,18 @@ tr.heading {
 
 td.time {
     white-space: nowrap;
+    width: 45%;
+}
+
+td.operator {
+    overflow-wrap: break-word;
+    width: 25%;
+}
+td.call {
+    width: 20%;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
 }
