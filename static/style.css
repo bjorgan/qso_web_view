@@ -31,7 +31,7 @@ tr.heading {
 #last_qsos {
     border-collapse: collapse;
     width: 100%;
-    font-size: 40pt;
+    font-size: 35pt;
 }
 
 #last_qsos tr:nth-child(even) {
