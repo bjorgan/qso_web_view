@@ -45,3 +45,7 @@ tr.heading {
 #last_qsos td {
     padding: 15pt;
 }
+
+td.time {
+    white-space: nowrap;
+}
