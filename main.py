@@ -2,11 +2,17 @@ from flask import Flask, render_template
 import psycopg2
 import qsostats
 import configparser
+import argparse
 
 app = Flask(__name__)
 
+#arguments
+parser = argparse.ArgumentParser()
+parser.add_argument('--db-config-path', default='db_config.ini', help='Path to config file containing postgresql connection information.')
+args = parser.parse_args()
+
 #read config
-db_config_path = 'db_config.ini'
+db_config_path = args.db_config_path
 db_config = configparser.ConfigParser()
 db_config.read(db_config_path)
 db_config = db_config['db_config']
