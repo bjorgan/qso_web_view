@@ -1,17 +1,21 @@
 body {
     font-family: Arial;
     margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    color: #EEE;
+    background: #37393A;
 }
 
 #count_today {
     font-size: 96pt;
-    background-color: #add8e6;
+    background: #37393A;
     text-align: center;
 }
 
 #count_twomonths {
     font-size: 40pt;
-    background-color: #add8e6;
+    background: #37393A;
     text-align: center;
     padding-bottom: 20pt;
 }
@@ -20,11 +24,19 @@ body {
     font-size: 30pt;
     padding: 40pt;
     text-align: center;
+    background: #022F40;
 }
 
 tr.heading {
     font-weight: bold;
-    background: white;
+    background: #37393A;
+}
+
+#t_heading {
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-top-style: solid;
+    border-top-width: 3px;
 }
 
 
@@ -35,11 +47,11 @@ tr.heading {
 }
 
 #last_qsos tr:nth-child(even) {
-    background: orange;
+    background: #022F40;
 }
 
 #last_qsos tr:nth-child(odd) {
-    background: #FFFF00;
+    background: #37393A;
 }
 
 #last_qsos td {
@@ -48,12 +60,12 @@ tr.heading {
 
 td.time {
     white-space: nowrap;
-    width: 45%;
+    width: 40%;
 }
 
 td.operator {
     overflow-wrap: break-word;
-    width: 25%;
+    width: 20%;
 }
 td.call {
     width: 20%;
@@ -62,4 +74,5 @@ td.call {
 table {
     table-layout: fixed;
     width: 100%;
+    color: #eee;
 }
